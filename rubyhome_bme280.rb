@@ -22,8 +22,8 @@ Thread.new do
   loop do
     data = sensor.calc_sensor_data
 
-    temperature_sensor.current_temperature = data[:temperature]
-    humidity_sensor.current_relative_humidity = data[:humidity]
+    temperature_sensor.current_temperature = data[:temp]
+    humidity_sensor.current_relative_humidity = data[:hum]
 
     sleep 30
   end
