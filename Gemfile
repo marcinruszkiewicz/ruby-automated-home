@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'i2c_drivers', git: 'https://github.com/marcinruszkiewicz/i2c_drivers'
+gem 'rah_bme280', git: 'https://github.com/marcinruszkiewicz/rah_bme280'
+gem 'rah_tasmota_basic', git: 'https://github.com/marcinruszkiewicz/rah_tasmota_basic'
 gem 'pry'
-gem 'ruby-prof'
 gem 'ruby_home'
