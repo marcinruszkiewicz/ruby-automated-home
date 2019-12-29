@@ -10,25 +10,26 @@ class Sensor < Device
     # prepare access to physical device on a gpio pin
     @device = RahBme280::Device.new(address: address)
 
+    data = @device.status
     # prepare service factories
     @temperature = RubyHome::ServiceFactory.create(
       :temperature_sensor,
-      current_temperature: 0.0,
+      current_temperature: data[:temperature],
       name: "#{device_name} Temperature"
     )
     @humidity = RubyHome::ServiceFactory.create(
       :humidity_sensor,
-      current_relative_humidity: 0.0,
+      current_relative_humidity: data[:humidity],
       name: "#{device_name} Humidity"
     )
   end
 
   def call
     # get data from physical sensor
-    data = @device.calc_sensor_data
+    data = @device.status
 
     # update homekit data from physical values
-    @temperature.current_temperature = data[:temp]
-    @humidity.current_relative_humidity = data[:hum]
+    @temperature.current_temperature = data[:temperature]
+    @humidity.current_relative_humidity = data[:humidity]
   end
 end
