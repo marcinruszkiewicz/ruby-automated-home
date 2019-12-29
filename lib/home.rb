@@ -17,10 +17,10 @@ class Home
       password: @config.config.dig('home', 'switch', 'password'),
       device_name: @config.config.dig('home', 'switch', 'name')
     )
-    # @devices << Sensor.new(
-    #   address: @config.config.dig('home', 'sensor', 'address'),
-    #   device_name: @config.config.dig('home', 'sensor', 'name')
-    # )
+    @devices << Sensor.new(
+      address: @config.config.dig('home', 'sensor', 'address'),
+      device_name: @config.config.dig('home', 'sensor', 'name')
+    )
   end
 
   def start
