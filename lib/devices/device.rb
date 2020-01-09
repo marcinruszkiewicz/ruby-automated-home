@@ -10,8 +10,6 @@ class Device
     raise NotImplementedError
   end
 
-  # this gets called in a loop every 30 seconds, so return status here
-  def call
-    raise NotImplementedError
-  end
+  # do nothing if device doesn't have any status updates
+  def call; end
 end

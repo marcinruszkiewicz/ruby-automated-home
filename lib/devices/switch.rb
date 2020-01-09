@@ -23,8 +23,4 @@ class Switch < Device
       end
     end
   end
-
-  def call
-
-  end
 end

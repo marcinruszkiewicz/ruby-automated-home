@@ -1,0 +1,9 @@
+home:
+  switch:
+    ip:
+    user:
+    password:
+    name:
+  sensor:
+    address:
+    name:
